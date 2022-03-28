@@ -40,9 +40,7 @@ public class TerrainsEvents implements Listener {
             Terrenos t = new Terrenos(p.getName(), tipo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.put(p.getName(), t);
             return;
-        }
-
-        else if (tipo == Types.PEQUENO) {
+        } else if (tipo == Types.PEQUENO) {
             int x1 = (int) p.getLocation().getBlock().getLocation().getX() + 7;
             int z1 = (int) p.getLocation().getBlock().getLocation().getZ() + 7;
             int x2 = (int) p.getLocation().getBlock().getLocation().getX() - 7;
@@ -56,12 +54,10 @@ public class TerrainsEvents implements Listener {
             cb.getFace(CuboidDirection.South).forEach(a -> a.setType(Material.OAK_FENCE));
             Location pos1 = new Location(p.getWorld(), x1, 320, z1);
             Location pos2 = new Location(p.getWorld(), x2, -64, z2);
-            Terrenos t = new Terrenos(p.getName(), tipo, pos1, pos2,null, false);
+            Terrenos t = new Terrenos(p.getName(), tipo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.put(p.getName(), t);
             return;
-        }
-
-        else if (tipo == Types.MEDIO) {
+        } else if (tipo == Types.MEDIO) {
             int x1 = (int) p.getLocation().getBlock().getLocation().getX() + 10;
             int z1 = (int) p.getLocation().getBlock().getLocation().getZ() + 10;
             int x2 = (int) p.getLocation().getBlock().getLocation().getX() - 10;
@@ -78,8 +74,7 @@ public class TerrainsEvents implements Listener {
             Terrenos t = new Terrenos(p.getName(), tipo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.put(p.getName(), t);
             return;
-        }
-        else if (tipo == Types.GRANDE) {
+        } else if (tipo == Types.GRANDE) {
             int x1 = (int) p.getLocation().getBlock().getLocation().getX() + 12;
             int z1 = (int) p.getLocation().getBlock().getLocation().getZ() + 12;
             int x2 = (int) p.getLocation().getBlock().getLocation().getX() - 12;
@@ -96,9 +91,7 @@ public class TerrainsEvents implements Listener {
             Terrenos t = new Terrenos(p.getName(), tipo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.put(p.getName(), t);
             return;
-        }
-
-        else if (tipo == Types.GIGANTE) {
+        } else if (tipo == Types.GIGANTE) {
             int x1 = (int) p.getLocation().getBlock().getLocation().getX() + 15;
             int z1 = (int) p.getLocation().getBlock().getLocation().getZ() + 15;
             int x2 = (int) p.getLocation().getBlock().getLocation().getX() - 15;
@@ -116,6 +109,7 @@ public class TerrainsEvents implements Listener {
             Terrains.instance.TerrenosCache.put(p.getName(), t);
         }
     }
+
     public static void upgradeTerreno(Player p, Types tipoFrom, Types tipoTo) {
 
         int terrenoX = 0;
@@ -148,11 +142,10 @@ public class TerrainsEvents implements Listener {
 
             Location pos1 = new Location(p.getWorld(), terrenoX + 7, 320, terrenoZ + 7);
             Location pos2 = new Location(p.getWorld(), terrenoX - 7, -64, terrenoZ - 7);
-            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2,null, false);
+            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.replace(p.getName(), t);
             return;
-        }
-        else if (tipoTo == Types.MEDIO) {
+        } else if (tipoTo == Types.MEDIO) {
             Cuboid cb = new Cuboid(p.getWorld(),
                     terrenoX + 10, (int) p.getLocation().getY(),
                     terrenoZ + 10,
@@ -165,11 +158,10 @@ public class TerrainsEvents implements Listener {
 
             Location pos1 = new Location(p.getWorld(), terrenoX + 10, 320, terrenoZ + 10);
             Location pos2 = new Location(p.getWorld(), terrenoX - 10, -64, terrenoZ - 10);
-            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2,null, false);
+            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.replace(p.getName(), t);
             return;
-        }
-        else if (tipoTo == Types.GRANDE) {
+        } else if (tipoTo == Types.GRANDE) {
             Cuboid cb = new Cuboid(p.getWorld(),
                     terrenoX + 12, (int) p.getLocation().getY(),
                     terrenoZ + 12,
@@ -182,11 +174,10 @@ public class TerrainsEvents implements Listener {
 
             Location pos1 = new Location(p.getWorld(), terrenoX + 12, 320, terrenoZ + 12);
             Location pos2 = new Location(p.getWorld(), terrenoX - 12, -64, terrenoZ - 12);
-            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2,null, false);
+            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.replace(p.getName(), t);
             return;
-        }
-        else if (tipoTo == Types.GIGANTE) {
+        } else if (tipoTo == Types.GIGANTE) {
             Cuboid cb = new Cuboid(p.getWorld(),
                     terrenoX + 15, (int) p.getLocation().getY(),
                     terrenoZ + 15,
@@ -199,11 +190,10 @@ public class TerrainsEvents implements Listener {
 
             Location pos1 = new Location(p.getWorld(), terrenoX + 15, 320, terrenoZ + 15);
             Location pos2 = new Location(p.getWorld(), terrenoX - 15, -64, terrenoZ - 15);
-            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2,null, false);
+            Terrenos t = new Terrenos(p.getName(), tipoTo, pos1, pos2, null, false);
             Terrains.instance.TerrenosCache.replace(p.getName(), t);
             return;
         }
-
 
 
     }
@@ -211,35 +201,35 @@ public class TerrainsEvents implements Listener {
     @EventHandler
     public void invBuy(InventoryClickEvent e) {
         Player p = (Player) e.getWhoClicked();
-        if (ChatColor.translateAlternateColorCodes('&',e.getView().getTitle()).equals(ChatColor.BLUE + "Adquira seu terreno")) {
+        if (ChatColor.translateAlternateColorCodes('&', e.getView().getTitle()).equals(ChatColor.BLUE + "Adquira seu terreno")) {
             e.setCancelled(true);
             if (e.getCurrentItem() == null)
                 return;
             if (!e.getCurrentItem().hasItemMeta())
                 return;
-            if (e.getRawSlot() == 0){
+            if (e.getRawSlot() == 0) {
                 p.closeInventory();
                 return;
             }
             if (e.getRawSlot() == 11) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) != null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
                     p.closeInventory();
                     return;
                 }
                 if (Terrenos.terrenosPorPerto(p.getLocation(), 25).size() >= 1) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
                     p.closeInventory();
                     return;
                 }
-                if(MoedasAPI.getBalance(p) < 10000) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
+                if (MoedasAPI.getBalance(p) < 10000) {
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
                     return;
                 }
                 MoedasAPI.withdrawPlayer(p, 10000);
                 comprarTerreno(p, Types.MINI);
                 p.closeInventory();
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.mini-successful-buy-message")));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.mini-successful-buy-message")));
 
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                 return;
@@ -247,97 +237,96 @@ public class TerrainsEvents implements Listener {
 
             if (e.getRawSlot() == 12) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) != null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
 
                     p.closeInventory();
                     return;
                 }
                 if (Terrenos.terrenosPorPerto(p.getLocation(), 25).size() >= 1) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
                     p.closeInventory();
                     return;
                 }
-                if(MoedasAPI.getBalance(p) < 25000) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
+                if (MoedasAPI.getBalance(p) < 25000) {
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
                     return;
                 }
                 MoedasAPI.withdrawPlayer(p, 25000);
                 comprarTerreno(p, Types.PEQUENO);
                 p.closeInventory();
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.pequeno-successful-buy-message")));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.pequeno-successful-buy-message")));
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                 return;
             }
 
             if (e.getRawSlot() == 13) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) != null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
                     p.closeInventory();
                     return;
                 }
                 if (Terrenos.terrenosPorPerto(p.getLocation(), 25).size() >= 1) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
                     p.closeInventory();
                     return;
                 }
-                if(MoedasAPI.getBalance(p) < 50000) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
+                if (MoedasAPI.getBalance(p) < 50000) {
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
                     return;
                 }
                 MoedasAPI.withdrawPlayer(p, 50000);
                 comprarTerreno(p, Types.MEDIO);
                 p.closeInventory();
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.medio-successful-buy-message")));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.medio-successful-buy-message")));
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                 return;
             }
 
             if (e.getRawSlot() == 14) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) != null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
                     p.closeInventory();
                     return;
                 }
                 if (Terrenos.terrenosPorPerto(p.getLocation(), 25).size() >= 1) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
                     p.closeInventory();
                     return;
                 }
-                if(MoedasAPI.getBalance(p) < 75000) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
+                if (MoedasAPI.getBalance(p) < 75000) {
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
                     return;
                 }
                 MoedasAPI.withdrawPlayer(p, 75000);
                 comprarTerreno(p, Types.GRANDE);
                 p.closeInventory();
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.grande-successful-buy-message")));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.grande-successful-buy-message")));
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                 return;
             }
 
             if (e.getRawSlot() == 15) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) != null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-are-on-exisisting-terrain")));
                     p.closeInventory();
                     return;
                 }
                 if (Terrenos.terrenosPorPerto(p.getLocation(), 25).size() >= 1) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.close-to-a-terrain")));
                     p.closeInventory();
                     return;
                 }
-                if(MoedasAPI.getBalance(p) < 100000) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
+                if (MoedasAPI.getBalance(p) < 100000) {
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-dont-have-money")));
                     return;
                 }
                 MoedasAPI.withdrawPlayer(p, 100000);
                 comprarTerreno(p, Types.GIGANTE);
                 p.closeInventory();
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.gigante-successful-buy-message")));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.gigante-successful-buy-message")));
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
             }
-        }
-        else if (ChatColor.translateAlternateColorCodes('&',e.getView().getTitle()).equals(ChatColor.BLUE + "Upgrade seu terreno")) {
+        } else if (ChatColor.translateAlternateColorCodes('&', e.getView().getTitle()).equals(ChatColor.BLUE + "Upgrade seu terreno")) {
             e.setCancelled(true);
             if (e.getCurrentItem() == null)
                 return;
@@ -348,219 +337,219 @@ public class TerrainsEvents implements Listener {
                 return;
             }
             //Quer evoluir para o terreno MINI
-            if (e.getRawSlot() == 11){
+            if (e.getRawSlot() == 11) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
                     p.closeInventory();
                     return;
                 }
                 //Tem o terreno MINI
                 if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MINI)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
-                //Tem o terreno PEQUENO
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
+                    //Tem o terreno PEQUENO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.PEQUENO)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
-                //Tem o terreno MEDIO
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    //Tem o terreno MEDIO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MEDIO)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
-                //Tem o terreno GRANDE
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    //Tem o terreno GRANDE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GRANDE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
-                //Tem o terreno GIGANTE
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    //Tem o terreno GIGANTE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GIGANTE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
             }
             //Quer evoluir para o terreno PEQUENO
-            else if (e.getRawSlot() == 12){
+            else if (e.getRawSlot() == 12) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
                     p.closeInventory();
                     return;
                 }
                 //Tem o terreno MINI
                 if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MINI) {
                     if (MoedasAPI.getBalance(p) < 16500) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 16500);
                     upgradeTerreno(p, Types.MINI, Types.PEQUENO);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.pequeno-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.pequeno-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno PEQUENO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.PEQUENO)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
-                //Tem o terreno MEDIO
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
+                    //Tem o terreno MEDIO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MEDIO)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
-                //Tem o terreno GRANDE
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    //Tem o terreno GRANDE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GRANDE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
-                //Tem o terreno GIGANTE
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    //Tem o terreno GIGANTE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GIGANTE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
             }
             //Quer evoluir para o MEDIO
             else if (e.getRawSlot() == 13) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
                     p.closeInventory();
                     return;
                 }
                 //Tem o terreno MINI
                 if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MINI) {
                     if (MoedasAPI.getBalance(p) < 44000) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 44000);
                     upgradeTerreno(p, Types.MINI, Types.MEDIO);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.medio-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.medio-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno PEQUENO
-                else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.PEQUENO){
+                else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.PEQUENO) {
                     if (MoedasAPI.getBalance(p) < 27500) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 27500);
                     upgradeTerreno(p, Types.PEQUENO, Types.MEDIO);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.medio-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.medio-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno MEDIO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MEDIO)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
-                //Tem o terreno GRANDE
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
+                    //Tem o terreno GRANDE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GRANDE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
-                //Tem o terreno GIGANTE
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    //Tem o terreno GIGANTE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GIGANTE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
             }
             //Quer evoluir para o terreno GRANDE
             else if (e.getRawSlot() == 14) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
                     p.closeInventory();
                     return;
                 }
                 //Tem o terreno MINI
                 if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MINI) {
                     if (MoedasAPI.getBalance(p) < 71500) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 71500);
                     upgradeTerreno(p, Types.MINI, Types.GRANDE);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.grande-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.grande-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno PEQUENO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.PEQUENO) {
                     if (MoedasAPI.getBalance(p) < 55000) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 55000);
                     upgradeTerreno(p, Types.PEQUENO, Types.GRANDE);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.grande-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.grande-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno MEDIO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MEDIO) {
                     if (MoedasAPI.getBalance(p) < 27500) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 27500);
                     upgradeTerreno(p, Types.MEDIO, Types.GRANDE);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.grande-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.grande-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno Grande
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GRANDE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
-                //Tem o terreno Gigante
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
+                    //Tem o terreno Gigante
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GIGANTE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-a-better-terrain")));
             }
             //Quer evoluir para o terreno gigante:
-            else if (e.getRawSlot() == 15){
+            else if (e.getRawSlot() == 15) {
                 if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
                     p.closeInventory();
                     return;
                 }
                 //Tem o terreno MINI
                 if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MINI) {
                     if (MoedasAPI.getBalance(p) < 99000) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 99000);
                     upgradeTerreno(p, Types.MINI, Types.GIGANTE);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno PEQUENO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.PEQUENO) {
                     if (MoedasAPI.getBalance(p) < 82500) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 82500);
                     upgradeTerreno(p, Types.PEQUENO, Types.GIGANTE);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno MEDIO
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.MEDIO) {
                     if (MoedasAPI.getBalance(p) < 52500) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 52500);
                     upgradeTerreno(p, Types.MEDIO, Types.GIGANTE);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno GRANDE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GRANDE) {
                     if (MoedasAPI.getBalance(p) < 27000) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-dont-have-money")));
                         return;
                     }
                     MoedasAPI.withdrawPlayer(p, 27000);
                     upgradeTerreno(p, Types.GRANDE, Types.GIGANTE);
                     p.closeInventory();
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.gigante-successful-buy-message")));
                     p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     return;
                 }
                 //Tem o terreno GIGANTE
                 else if (Objects.requireNonNull(Terrenos.terrenosNaLoc(p.getLocation())).getTipo() == Types.GIGANTE)
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-already-have-this-type-of-terrain")));
             }
         }
     }
@@ -571,7 +560,7 @@ public class TerrainsEvents implements Listener {
         Block b = e.getBlock();
         if (b.getLocation().getY() >= 320) {
             e.setCancelled(true);
-            e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Events.build-limit")));
+            e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Events.build-limit")));
         }
     }
 
@@ -628,34 +617,32 @@ public class TerrainsEvents implements Listener {
 
     @EventHandler
     public void dano(EntityDamageByEntityEvent e) {
-        if(e.getEntity() instanceof Player) {
-            if(e.getDamager() instanceof Player) {
+        if (e.getEntity() instanceof Player) {
+            if (e.getDamager() instanceof Player) {
                 Player p = (Player) e.getDamager();
                 Player target = (Player) e.getEntity();
-                if(target.getWorld().getName().equals("world")) {
+                if (target.getWorld().getName().equals("world")) {
                     Terrenos t = Terrenos.terrenosNaLoc(target.getLocation());
-                    if(t != null) {
-                        if(t.isPvp()) {
+                    if (t != null) {
+                        if (t.isPvp()) {
                             e.setCancelled(false);
                             return;
-                        }else {
+                        } else {
                             e.setCancelled(true);
-                            p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Events.pvp")));
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Events.pvp")));
                             return;
                         }
                     }
-                }
-                else{
+                } else {
                     return;
                 }
-            }
-            else if (e.getDamager() instanceof Projectile){
+            } else if (e.getDamager() instanceof Projectile) {
                 if (((Projectile) e.getDamager()).getShooter() instanceof Player) {
                     Player p = (Player) ((Projectile) e.getDamager()).getShooter();
                     Player target = (Player) e.getEntity();
-                    if(target.getWorld().getName().equals("world")) {
+                    if (target.getWorld().getName().equals("world")) {
                         Terrenos t = Terrenos.terrenosNaLoc(target.getLocation());
-                        if(t != null) {
+                        if (t != null) {
                             if (t.isPvp()) {
                                 e.setCancelled(false);
                                 return;
@@ -666,62 +653,98 @@ public class TerrainsEvents implements Listener {
                             }
                         }
                     }
-                }
-                else{
+                } else {
                     return;
                 }
             }
         }
     }
 
-//    @EventHandler
-//    public void interagir(PlayerInteractEvent e) {
-//        Player p = e.getPlayer();
-//        if(p.getWorld().getName().equals("world")) {
-//            Terrenos t = Terrenos.terrenosNaLoc(p.getLocation());
-//            if(t != null) {
-//                if(t.getJogador().equals(p.getName())) {
-//                    e.setCancelled(false);
+    @EventHandler
+//public void interagir(PlayerInteractEvent e) {
+//    Player p = e.getPlayer();
+//    if(p.getWorld().getName().equals("world")) {
+//        Block targetBlock = p.getTargetBlock(null, 6);
+//        if (targetBlock != null) {
+//            Terrenos t = Terrenos.terrenosNaLoc(targetBlock.getLocation());
+//            if (t != null) {
+//                if (t.getJogador().equals(p.getName())) {
 //                    return;
-//                }
-//                else if(t.getAmigos() != null) {
-//                    if(t.getAmigos().contains(p.getName())) {
-//                        e.setCancelled(false);
+//                } else if (t.getAmigos() != null) {
+//                    if (t.getAmigos().contains(p.getName())) {
 //                        return;
 //                    }
 //                }
 //                e.setCancelled(true);
-//                p.sendMessage(ChatColor.RED + "Você não pode interagir com coisas aqui.");
-//                return;
-//            }
-//            else{
-//                e.setCancelled(false);
+//                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Events.interact")));
 //                return;
 //            }
 //        }
 //    }
 //}
-@EventHandler
-public void interagir(PlayerInteractEvent e) {
-    Player p = e.getPlayer();
-    if(p.getWorld().getName().equals("world")) {
-        Block targetBlock = p.getTargetBlock(null, 6);
-        if (targetBlock != null) {
-            Terrenos t = Terrenos.terrenosNaLoc(targetBlock.getLocation());
-            if (t != null) {
-                if (t.getJogador().equals(p.getName())) {
-                    return;
-                } else if (t.getAmigos() != null) {
-                    if (t.getAmigos().contains(p.getName())) {
+//}
+    public void interagir(PlayerInteractEvent e) {
+        Terrenos t;
+        Player p = e.getPlayer();
+        if (p.getWorld().getName().equals("world")) {
+
+            t = Terrenos.terrenosNaLoc(p.getLocation());
+
+            //Não tem terreno na localização do player
+            if (t == null) {
+                Block targetBlock = p.getTargetBlock(null, 6);
+                if (targetBlock != null) {
+                    t = Terrenos.terrenosNaLoc(targetBlock.getLocation());
+
+                    //Também não tem terreno aonde o player ta olhando
+                    if (t == null) {
+                        return;
+                    }
+                    //Tem aonde o player ta olhando
+                    else {
+                        if (t.getJogador().equals(p.getName())) {
+                            return;
+                        } else if (t.getAmigos() != null) {
+                            if (t.getAmigos().contains(p.getName())) {
+                                return;
+                            }
+                        } else if (p.isOp()) {
+                            return;
+                        }
+                        e.setCancelled(true);
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Events.interact")));
                         return;
                     }
                 }
-                e.setCancelled(true);
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Events.interact")));
-                return;
+            }
+
+            //Tem terreno na localização do player
+            else {
+                Block targetBlock = p.getTargetBlock(null, 6);
+                if (targetBlock != null) {
+                    t = Terrenos.terrenosNaLoc(targetBlock.getLocation());
+
+                    //Mas não tem terreno aonde o player ta olhando
+                    if (t == null) {
+                        return;
+                    }
+                    //Tem aonde o player ta olhando
+                    else {
+                        if (t.getJogador().equals(p.getName())) {
+                            return;
+                        } else if (t.getAmigos() != null) {
+                            if (t.getAmigos().contains(p.getName())) {
+                                return;
+                            }
+                        } else if (p.isOp()) {
+                            return;
+                        }
+                        e.setCancelled(true);
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Events.interact")));
+                        return;
+                    }
+                }
             }
         }
     }
 }
-}
-
