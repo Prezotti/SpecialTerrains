@@ -1,5 +1,6 @@
 Messages:
   Comandos:
+    no-permission: '&cVocê não tem permissão para usar este comando!'
     argument-not-found: '&cArgumento não encontrado! Digite &f/terrenos &cpara ver a lista de comandos!'
     too-many-arguments: '&cVocê não pode colocar espaços aqui!'
     Terrenos:
@@ -67,3 +68,13 @@ Messages:
     pvp: '&cO PVP está desativado neste terreno!'
     interact: '&cVocê não pode interagir com nada neste terreno'
     build-limit: '&cVocê só pode colocar blocos até &f320 &cblocos de altura'
+Permissions:
+  all: 'specialterrains.all'
+  buy: 'specialterrains.buy'
+  leave: 'specialterrains.leave'
+  add: 'specialterrains.add'
+  remove: 'specialterrains.remove'
+  pvp: 'specialterrains.pvp'
+  info: 'specialterrains.info'
+  upgrade: 'specialterrains.upgrade'
+  admin: 'specialterrains.admin'

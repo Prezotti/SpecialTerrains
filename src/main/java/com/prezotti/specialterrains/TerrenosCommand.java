@@ -40,8 +40,9 @@ public class TerrenosCommand implements CommandExecutor {
 
                     if (subComando1.equalsIgnoreCase("comprar")) {
 
-                        if (p.hasPermission("bla")){
-
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.buy")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
                         }
 
                         if (Terrains.instance.TerrenosCache.containsKey(p.getName())) {
@@ -72,6 +73,12 @@ public class TerrenosCommand implements CommandExecutor {
                     }
 
                     else if (subComando1.equalsIgnoreCase("upgrade")){
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.upgrade")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Upgrade.you-have-to-be-on-your-terrain")));
                             return true;
@@ -161,6 +168,12 @@ public class TerrenosCommand implements CommandExecutor {
                     }
 
                     else if (subComando1.equalsIgnoreCase("info")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.info")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Info.there-is-not-a-terrain-here")));
 
@@ -199,6 +212,12 @@ public class TerrenosCommand implements CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Remover.missing-one-argument")));
 
                     } else if (subComando1.equalsIgnoreCase("abandonar")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.leave")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (!Terrains.instance.TerrenosCache.containsKey(p.getName())) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Abandonar.you-dont-have-a-terrain")));
                             return true;
@@ -219,6 +238,12 @@ public class TerrenosCommand implements CommandExecutor {
                 if (args.length == 2) {
                     String subComando1 = args[0];
                     if (subComando1.equalsIgnoreCase("comprar")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.buy")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (Terrains.instance.TerrenosCache.containsKey(p.getName())) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-already-have-a-terrain")));
                             return true;
@@ -244,6 +269,12 @@ public class TerrenosCommand implements CommandExecutor {
                         p.openInventory(inv);
 
                     } else if (subComando1.equalsIgnoreCase("info")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.info")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (Terrenos.terrenosNaLoc(p.getLocation()) == null) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Info.there-is-not-a-terrain-here")));
                         } else {
@@ -272,7 +303,14 @@ public class TerrenosCommand implements CommandExecutor {
                             p.sendMessage(" ");
                         }
 
-                    }    else if (subComando1.equalsIgnoreCase("add")) {
+                    }
+                    else if (subComando1.equalsIgnoreCase("add")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.add")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (!Terrains.instance.TerrenosCache.containsKey(p.getName())) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Add.you-dont-have-a-terrain")));
                             return true;
@@ -308,7 +346,15 @@ public class TerrenosCommand implements CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Add.successful-add-friend-message").replace("{FRIEND}",alvo.getName())));
                         jogadores.add(alvo.getName());
                         t.setAmigos(jogadores);
-                    } else if (subComando1.equalsIgnoreCase("remover")) {
+
+                    }
+                    else if (subComando1.equalsIgnoreCase("remover")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.remove")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (!Terrains.instance.TerrenosCache.containsKey(p.getName())) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Remover.you-dont-have-a-terrain")));
                             return true;
@@ -337,7 +383,14 @@ public class TerrenosCommand implements CommandExecutor {
                         jogadores.remove(alvo.getName());
                         t.setAmigos(jogadores);
 
-                    } else if (subComando1.equalsIgnoreCase("abandonar")) {
+                    }
+                    else if (subComando1.equalsIgnoreCase("abandonar")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.leave")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (!Terrains.instance.TerrenosCache.containsKey(p.getName())) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Abandonar.you-dont-have-a-terrain")));
                             return true;
@@ -346,6 +399,12 @@ public class TerrenosCommand implements CommandExecutor {
                         Terrains.instance.TerrenosCache.remove(p.getName());
                         Terrains.getInstance().DataFile.getConfig().set("Terrenos."+p.getName(),"");
                     } else if (subComando1.equalsIgnoreCase("pvp")) {
+
+                        if (!p.hasPermission(Terrains.instance.getConfig().getString("Permissions.pvp")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.all")) && !p.hasPermission(Terrains.instance.getConfig().getString("Permissions.admin")) && !p.isOp()){
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Terrains.instance.getConfig().getString("Messages.Comandos.no-permission")));
+                            return true;
+                        }
+
                         if (!Terrains.instance.TerrenosCache.containsKey(p.getName())) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Pvp.you-dont-have-a-terrain")));
                             return true;
