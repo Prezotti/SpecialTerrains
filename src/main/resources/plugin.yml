@@ -1,0 +1,9 @@
+name: SpecialTerrains
+version: '${project.version}'
+main: com.prezotti.specialterrains.Terrains
+api-version: 1.18
+authors: [ Prezotti ]
+description: A Terrains buy plugin to remind you of 1.5.2
+commands:
+  terrenos:
+    aliases: [terreno, t]
