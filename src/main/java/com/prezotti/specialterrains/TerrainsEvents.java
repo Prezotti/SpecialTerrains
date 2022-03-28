@@ -696,7 +696,7 @@ public class TerrainsEvents implements Listener {
                 if (targetBlock != null) {
                     t = Terrenos.terrenosNaLoc(targetBlock.getLocation());
 
-                    //Também não tem terreno aonde o player ta olhando
+                    //Tambem não tem terreno aonde o player ta olhando
                     if (t == null) {
                         return;
                     }
