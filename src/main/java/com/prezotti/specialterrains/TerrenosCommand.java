@@ -40,6 +40,10 @@ public class TerrenosCommand implements CommandExecutor {
 
                     if (subComando1.equalsIgnoreCase("comprar")) {
 
+                        if (p.hasPermission("bla")){
+
+                        }
+
                         if (Terrains.instance.TerrenosCache.containsKey(p.getName())) {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&',Terrains.instance.getConfig().getString("Messages.Comandos.Comprar.you-already-have-a-terrain")));
                             return true;
